@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --background: 210 33% 98%;
+    --foreground: 216 40% 21%;
+    --card: 0 0% 100%;
+    --card-foreground: 216 40% 21%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 40% 21%;
+    --primary: 216 45% 21%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 93%;
+    --secondary-foreground: 216 40% 21%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 216 20% 46%;
+    --accent: 271 91% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 271 91% 65%;
+    --chart-1: 271 91% 65%;
+    --chart-2: 199 89% 60%;
+    --chart-3: 216 45% 21%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+
+    --neon-purple: 271 91% 65%;
+    --sky-blue: 199 89% 60%;
+    --deep-navy: 216 45% 21%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 40% 8%;
+    --foreground: 210 20% 95%;
+    --card: 220 35% 12%;
+    --card-foreground: 210 20% 95%;
+    --popover: 220 35% 12%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 271 91% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 30% 16%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 199 89% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 271 91% 65%;
+    --chart-1: 271 91% 65%;
+    --chart-2: 199 89% 60%;
+    --chart-3: 216 45% 70%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    --neon-purple: 271 91% 65%;
+    --sky-blue: 199 89% 60%;
+    --deep-navy: 216 45% 21%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Neon glow utilities */
+.neon-glow-purple {
+  box-shadow: 0 0 20px hsl(271 91% 65% / 0.3), 0 0 60px hsl(271 91% 65% / 0.1);
+}
+.neon-glow-purple-intense {
+  box-shadow: 0 0 20px hsl(271 91% 65% / 0.5), 0 0 80px hsl(271 91% 65% / 0.25), 0 0 120px hsl(271 91% 65% / 0.1);
+}
+
+.dark .neon-glow-card:hover {
+  box-shadow: 0 0 30px hsl(271 91% 65% / 0.4), 0 0 60px hsl(199 89% 60% / 0.15);
+}
+.neon-glow-card:hover {
+  box-shadow: 0 0 30px hsl(271 91% 65% / 0.25), 0 8px 32px hsl(216 45% 21% / 0.15);
+}
+
+.glass {
+  background: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Cards / caixas — brilho roxo + base azul no claro; roxo + azul claro no escuro */
+.nexus-card-interactive {
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+.nexus-card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: hsl(271 91% 65% / 0.45);
+  box-shadow:
+    0 0 0 1px hsl(271 91% 65% / 0.35),
+    0 0 36px hsl(271 91% 65% / 0.28),
+    0 16px 40px rgb(30 46 79 / 0.2);
+}
+.dark .nexus-card-interactive:hover {
+  border-color: hsl(271 91% 65% / 0.55);
+  box-shadow:
+    0 0 0 1px hsl(271 91% 65% / 0.45),
+    0 0 48px hsl(271 91% 65% / 0.35),
+    0 0 80px hsl(199 89% 60% / 0.18);
+}
+
+.nexus-chip-interactive {
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.nexus-chip-interactive:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow:
+    0 0 24px hsl(271 91% 65% / 0.35),
+    0 8px 24px rgb(30 46 79 / 0.12);
+}
+.dark .nexus-chip-interactive:hover {
+  box-shadow:
+    0 0 28px hsl(271 91% 65% / 0.4),
+    0 0 48px hsl(199 89% 60% / 0.15);
+}
