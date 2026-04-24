@@ -72,17 +72,19 @@ const translations = {
       messagePlaceholder: 'Como podemos ajudar seu negócio?',
       send: 'Enviar mensagem',
     },
-    footer: {
-      desc: 'Pioneiros em soluções de infraestrutura digital, segurança e inteligência artificial para o mercado corporativo global.',
-      nav: 'Navegação',
-      contactUs: 'Fale Conosco',
-      rights: '© 2026 Nexus Solutions. Todos os direitos reservados.',
-      privacy: 'Privacy Policy',
-      terms: 'Terms of Service',
-      footerEmail: 'hello@nexussolutions.tech',
-      footerPhone: '+55 11 99999-9999',
-      footerAddress: 'São Paulo, SP — Brasil',
-    },
+  footer: {
+  desc: 'Pioneiros em soluções de infraestrutura digital, segurança e inteligência artificial para empresas.',
+  nav: 'Navegação',
+  contactUs: 'Fale Conosco',
+  rights: '© 2026 Nexus Solutions. Todos os direitos reservados.',
+  privacy: 'Política de Privacidade',
+  terms: 'Termos de Uso',
+
+  footerEmail: 'contato@nexussolutions.com.br',
+  footerPhone: '+55 66 3199-2858',
+  footerAddress: 'Rondonópolis • Atendemos todo o Brasil',
+  footerHours: 'Seg–Sex: 8h às 18h',
+},
     // IA page
     ia: {
       heroTitle: 'IA & Automação no WhatsApp',
